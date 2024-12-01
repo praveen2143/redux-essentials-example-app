@@ -31,7 +31,7 @@ export const AddPostForm = () => {
         title,
         content
       }
-      dispatch(postAdded(newPost))
+      dispatch(postAdded(title, content))
 
 
     e.currentTarget.reset()
