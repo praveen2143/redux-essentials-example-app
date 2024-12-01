@@ -36,7 +36,17 @@ const postsSlice = createSlice({
                 existingPost.content = content;
             }
         }
-}
+},
+/*
+  selectors: {
+    // Note that these selectors are given just the `PostsState`
+    // as an argument, not the entire `RootState`
+    selectAllPosts: postsState => postsState,
+    selectPostById: (postsState, postId: string) => {
+      return postsState.find(post => post.id === postId)
+    }
+  }
+    */
 })
 
 export const { postAdded, postUpdated } = postsSlice.actions
