@@ -4,6 +4,7 @@ import { selectAllPosts } from "./postsSlice";
 
 import { PostAuthor } from "./PostAuthor"
 import { TimeAgo } from "@/components/TimeAgo";
+import { ReactionButtons } from "./ReactionButtons";
 
 export const PostsList = () => {
     const posts = useAppSelector(selectAllPosts)
@@ -16,6 +17,7 @@ export const PostsList = () => {
         <Link to={`/posts/${post.id}`}>Edit</Link>
         <PostAuthor userId={post.user}/>
         <TimeAgo timestamp={post.date}/>
+       // <ReactionButtons post = {post}/> 
       </article> 
     ))
 
