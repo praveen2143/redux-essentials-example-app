@@ -1,6 +1,7 @@
 import { useAppSelector } from "@/app/hooks"
 import { createSlice } from "@reduxjs/toolkit"
 import { RootState } from "@/app/store"
+import { selectCurrentUsername } from "../auth/authSlice"
 
 interface User {
     id : string,
@@ -24,4 +25,9 @@ export const usersActions = usersSlice.actions
 
 export const selectAllUsers = (state: RootState) => state.users
 
-export const selectUserById = (state: RootState, userId : String) => state.users.find(users => users.id === userId);
+export const selectUserById = (state: RootState, userId : String | null) => state.users.find(users => users.id === userId);
+
+export const selectCurrentUser = (state: RootState) => {
+    const currentUsername = selectCurrentUsername(state)
+    return selectUserById(state, currentUsername)
+}

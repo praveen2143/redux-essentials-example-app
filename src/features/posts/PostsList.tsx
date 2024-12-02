@@ -14,10 +14,10 @@ export const PostsList = () => {
         <article className="post-excerpt" key={post.id}>
         <Link to={`/post/${post.id}`}>{post.title}</Link>
         <p className="post-content">{post.content.substring(0, 100)}</p>
-        <Link to={`/posts/${post.id}`}>Edit</Link>
+        <Link to={`/editPost/${post.id}`}>Edit</Link>
         <PostAuthor userId={post.user}/>
         <TimeAgo timestamp={post.date}/>
-       // <ReactionButtons post = {post}/> 
+        <ReactionButtons post = {post}/> 
       </article> 
     ))
 

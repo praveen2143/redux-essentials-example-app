@@ -2,6 +2,7 @@ import { Action, configureStore } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 import postsReducer from '@/features/posts/postsSlice'
 import usersReducer from '@/features/users/usersSlice'
+import authReducer from '@/features/auth/authSlice'
 
 interface CounterState{
     value : number
@@ -19,7 +20,8 @@ function counterReducer(state : CounterState= { value: 0 }, action : Action) {
 export const store = configureStore({
     reducer:{
         posts: postsReducer,
-        users: usersReducer
+        users: usersReducer,
+        auth: authReducer
     }
 })
 

@@ -10,6 +10,7 @@ import { selectAllUsers } from '../users/usersSlice'
 interface AddPostFormFields extends HTMLFormControlsCollection {
   postTitle: HTMLInputElement
   postContent: HTMLTextAreaElement
+  postAuthor: HTMLSelectElement
 }
 interface AddPostFormElements extends HTMLFormElement {
   readonly elements: AddPostFormFields
